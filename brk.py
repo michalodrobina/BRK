@@ -49,7 +49,8 @@ for i in range(0,len(brk_csv)-1):
             logger.info(str((brk_csv.index[i], brk_csv['price'].iloc[i], lok_min_index, lok_min, round(lok_min/brk_csv['price'].iloc[i]*100,1))))
             years[int(lok_min_index[:4])]=years.get(int(lok_min_index[:4]))+1
             liczba+=1
-print('liczba: ',liczba,'/',len(brk_csv))
+print('Liczba dołków / liczba sesji: ',liczba,'/',len(brk_csv))
 
 for k,v in years.items():
-    print('{} {}'.format(k,v))
+    if v>0:
+        print('Rok {}, liczba dołków {}'.format(k,v))
